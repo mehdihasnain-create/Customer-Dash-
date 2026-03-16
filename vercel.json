@@ -1,0 +1,6 @@
+{
+  "framework": "nextjs",
+  "functions": {
+    "app/api/zendesk/route.ts": { "maxDuration": 60 }
+  }
+}
