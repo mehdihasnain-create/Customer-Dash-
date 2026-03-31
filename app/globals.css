@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --surface:              #0b1326;
+  --surface-low:          #131b2e;
+  --surface-container:    #171f33;
+  --surface-high:         #222a3d;
+  --surface-highest:      #2d3449;
+  --surface-lowest:       #060e20;
+  --surface-bright:       #31394d;
+
+  --on-surface:           #dae2fd;
+  --on-surface-variant:   #c6c6cd;
+  --on-secondary:         #a9bad3;
+
+  --primary:              #89ceff;
+  --primary-container:    #001a29;
+  --primary-dim:          #89ceff;
+  --on-primary:           #00344d;
+
+  --secondary:            #b7c8e1;
+  --secondary-container:  #3a4a5f;
+
+  --tertiary:             #3cddc7;
+  --tertiary-container:   #001c18;
+  --on-tertiary-container:#009182;
+
+  --error:                #ffb4ab;
+  --error-container:      #93000a;
+  --on-error-container:   #ffdad6;
+
+  --outline:              #909097;
+  --outline-variant:      #45464d;
+}
+
+* { font-family: 'Inter', sans-serif; box-sizing: border-box; }
+
+body {
+  background: var(--surface);
+  color: var(--on-surface);
+  min-height: 100vh;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--outline-variant); border-radius: 10px; }
+
+/* ── Material Icons ─────────────────────────────────────── */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-size: 20px;
+  line-height: 1;
+  user-select: none;
+}
+
+/* ── Glass panel ────────────────────────────────────────── */
+.glass-panel {
+  background: rgba(45, 52, 73, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ── Dark data tables ───────────────────────────────────── */
+.data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+
+.data-table thead th {
+  background: var(--surface-low);
+  color: var(--on-secondary);
+  padding: 12px 20px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: left;
+}
+.data-table thead th:not(:first-child) { text-align: right; }
+
+.data-table tbody tr {
+  border-bottom: 1px solid rgba(69, 70, 77, 0.12);
+  transition: background 0.15s;
+}
+.data-table tbody tr:hover { background: var(--surface-highest); cursor: default; }
+
+.data-table tbody td {
+  padding: 14px 20px;
+  color: var(--on-surface);
+  font-size: 12px;
+  text-align: right;
+}
+.data-table tbody td:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: #fff;
+}
+
+.data-table a { color: var(--primary); text-decoration: none; font-weight: 600; }
+.data-table a:hover { color: var(--tertiary); }
+
+/* ── Channel tables (weekly metrics) ───────────────────── */
+.channel-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+
+.channel-table thead th {
+  background: var(--surface-low);
+  color: var(--on-secondary);
+  padding: 10px 16px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+.channel-table thead th:first-child { text-align: left; }
+
+.channel-table tbody tr {
+  border-bottom: 1px solid rgba(69, 70, 77, 0.1);
+  transition: background 0.15s;
+}
+.channel-table tbody tr:hover { background: var(--surface-highest); }
+
+.channel-table tbody td {
+  padding: 10px 16px;
+  text-align: center;
+  color: var(--on-surface);
+}
+.channel-table tbody td:first-child { text-align: left; }
+
+.channel-table .total-row td {
+  font-weight: 700;
+  background: var(--surface-high);
+  color: var(--on-surface);
+}
+.channel-table a { color: var(--primary); text-decoration: none; font-weight: 600; }
+.channel-table a:hover { color: var(--tertiary); }
